@@ -15,7 +15,9 @@ router.post('/', [
 ], crearHospital)
 
 router.put('/:id', [
-
+  validarJWT,
+  check('nombre', 'El nombre del hospital es obligatorio').not().isEmpty(),
+  validarCampos
 ], actualizarHospital)
 
 router.delete('/:id', validarJWT, eliminarHospital)
