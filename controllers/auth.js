@@ -96,7 +96,8 @@ const renewToken = async (req, res = response) => {
   res.json({
     ok: true,
     token,
-    usuario
+    usuario,
+    menu: getMenuFrontEnd(usuario.role)
   })
 }
 
